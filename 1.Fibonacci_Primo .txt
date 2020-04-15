@@ -1,0 +1,42 @@
+----------------------------------------FIBONACCI--------------------
+(deffunction fibonassi(?n) 
+(if ( or (= ?n 0) (= ?n 1))then 
+?n
+else  
+(+ (fibonassi(- ?n 1)) (fibonassi(- ?n 2))) 
+)
+) 
+
+
+(deffunction calcularfibonassi (?n)
+(bind ?contador 0) 
+(while (< ?contador ?n)do
+(printout t (fibonassi ?contador)crlf)
+(bind ?contador (+ ?contador 1)) 
+)
+) 
+
+(printout t (calcularfibonassi 10)) 
+
+------------------------------- PRIMO---------------------------- 
+
+(deffunction primoRecursivo(?numero ?d)    
+  (if(< (/ ?numero 2) ?d)then 
+    (return TRUE)
+   else 
+     (if (= (mod ?numero ?d) 0)then  
+      (return FALSE)   
+     else      
+      (return(primoRecursivo ?numero (+ ?d 1)))))) 
+
+
+(deffunction verificarPrimo(?numero)  
+(if(primoRecursivo ?numero 2) then 
+ (printout t (str-cat "EL NUMERO " ?numero " ES PRIMO ") crlf)  
+ else 
+ (printout t (str-cat "EL NUMERO " ?numero " NO ES PRIMO ") crlf)
+ )) 
+
+(printout t (verificarPrimo 2)) 
+(printout t (verificarPrimo 4)) 
+
