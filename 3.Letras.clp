@@ -1,54 +1,55 @@
 (deffacts hechos-iniciales 
-(k) 
-(h) 
+(K) 
+(H) 
 ) 
 
 (defrule regla1
-(and (a) (not (d))) 
+(A) 
 => 
-(assert(e))
+(assert(E))
 )  
 
 (defrule regla2
-(and (b) (not (d)))
+(B)
 => 
-(assert(d))
+(assert(D))
 ) 
 
 (defrule regla3
-(and (h) (not (d))) 
+(H)  
 => 
-(assert(a)) 
+(assert(A)) 
 ) 
 
 (defrule regla4
-(and (and (e) (g)) (not (d))) 
+(and (E) (G)) 
 => 
-(assert(c))
+(assert(C))
 ) 
 
 (defrule regla5
-(and (and (e) (k)) (not (d))) 
+(and (E) (K))
 => 
-(assert(b)) 
+(assert(B)) 
 ) 
 
 (defrule regla6
-(and (and (and (d) (e)) (k)) (not (d))) 
+(and (and (D) (E)) (K)) 
 => 
-(assert(c)) 
+(assert(C)) 
 )  
 
 (defrule regla7 
-(and (and (and (g) (k)) (f)) (not (d))) 
+(and (and (G) (K)) (F)) 
 => 
-(assert(a)) 
+(assert(A)) 
 )  
 
 (defrule reglaFinal 
-(d) 
+(D) 
 => 
-(assert(Hecho d esta activado)) 
+(assert(Hecho D esta activado)) b
+(printout t "El hecho D ESTA ACTIVADO" crlf)
 )
 
 
