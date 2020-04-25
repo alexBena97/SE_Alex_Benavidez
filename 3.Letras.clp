@@ -48,7 +48,7 @@
 (defrule reglaFinal 
 (D) 
 => 
-(assert(Hecho D esta activado)) b
+(assert(Hecho D esta activado)) 
 (printout t "El hecho D ESTA ACTIVADO" crlf)
 )
 
